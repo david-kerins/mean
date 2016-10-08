@@ -43,7 +43,7 @@ exports.userByID = function(req, res, next, id) {
         }
     });
 };
-//Animal.findByName('fido', function (err, animals) {console.log(animals)});
+//Not working correctly...
 exports.userByUsername = function(req, res, next, loginid) {
     User.findOneByUsername({
         username: loginid
