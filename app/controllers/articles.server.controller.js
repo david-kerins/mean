@@ -41,8 +41,7 @@ exports.list = function(req, res) {
 exports.articleByID = function(req, res, next, id) {
     Article.findById(id).populate('creator', 'firstName lastName fullName').exec(function(err, article) {
         if (err) return next(err);
-        if (!article) return next(new Error('Failed to load article '
-            + id));
+        if (!article) return next(new Error('Failed to load article ' + id));
         req.article = article;
         next();
     });
